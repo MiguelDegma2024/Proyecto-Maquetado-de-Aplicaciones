@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <title>NeoPharma</title>
+</head>
+<body>
+    <header class="header">
+        <div class="location-container">
+            <div class="location-icon">📍</div>
+            <div class="location-text">
+                <span>Deliever to Hermosillo 83104</span>
+                <strong>Update Location</strong>
+            </div>
+        </div>
+        
+        <div class="brand">
+            <span class="neo">Neo</span><span class="pharma">Pharma</span>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="What are you looking for?">
+            <span class="search-icon">✕</span>
+        </div>
+        
+        <div class="nav-links">
+            <a href="#" class="nav-link">Categories</a>
+            <a href="#" class="nav-link">Page</a>
+            <button class="login-btn">Log In</button>
+            <div class="cart-icon">🛒</div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="product-card" data-price="10.99">
+            <div class="product-info">
+                <img src="Fotos/Figma_SunVita.jpg" alt="SunVita" class="product-image">
+                <div class="product-details">
+                    <div class="product-name">SunVita</div>
+                    <div class="product-description">Nourish Your Skin, Shield the Sun</div>
+                </div>
+            </div>
+            
+            <div class="product-controls">
+                <div class="product-price">$10.99</div>
+                <div class="quantity-control">
+                    <button class="quantity-btn minus">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <select class="dropdown-select">
+                    <option selected disabled>Size</option>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                </select>
+                <button class="delete-btn">🗑️</button>
+            </div>
+        </div>
+        
+        <div class="product-card" data-price="7.99">
+            <div class="product-info">
+                <img src="Fotos/Figma_RenewBoost.jpg" alt="RenewBoost" class="product-image">
+                <div class="product-details">
+                    <div class="product-name">RenewBoost</div>
+                    <div class="product-description">Youthful Glow, Renewed Skin</div>
+                </div>
+            </div>
+            
+            <div class="product-controls">
+                <div class="product-price">$7.99</div>
+                <div class="quantity-control">
+                    <button class="quantity-btn minus">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <select class="dropdown-select">
+                    <option selected disabled>Size</option>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                </select>
+                <button class="delete-btn">🗑️</button>
+            </div>
+        </div>
+        
+        <div class="product-card" data-price="11.99">
+            <div class="product-info">
+                <img src="Fotos/Figma_PureGlow.jpg" alt="PureGlow" class="product-image">
+                <div class="product-details">
+                    <div class="product-name">PureGlow</div>
+                    <div class="product-description">Natural Radiance</div>
+                </div>
+            </div>
+            
+            <div class="product-controls">
+                <div class="product-price">$11.99</div>
+                <div class="quantity-control">
+                    <button class="quantity-btn minus">-</button>
+                    <span class="quantity-display">2</span>
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <select class="dropdown-select">
+                    <option selected disabled>Size</option>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                </select>
+                <button class="delete-btn">🗑️</button>
+            </div>
+        </div>
+
+        <div class="product-card" data-price="7.99">
+            <div class="product-info">
+                <img src="Fotos/Figma_RenewBoost.jpg" alt="RenewBoost" class="product-image">
+                <div class="product-details">
+                    <div class="product-name">RenewBoost</div>
+                    <div class="product-description">Youthful Glow, Renewed Skin</div>
+                </div>
+            </div>
+            
+            <div class="product-controls">
+                <div class="product-price">$7.99</div>
+                <div class="quantity-control">
+                    <button class="quantity-btn minus">-</button>
+                    <span class="quantity-display">1</span>
+                    <button class="quantity-btn plus">+</button>
+                </div>
+                <select class="dropdown-select">
+                    <option selected disabled>Size</option>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                </select>
+                <button class="delete-btn">🗑️</button>
+            </div>
+        </div>
+        
+        <div class="total-section">
+            <div class="total-title">Total:</div>
+            <div class="total-amount">$42.96</div>
+        </div>
+        
+        <button class="checkout-btn">Proceed to Checkout</button>
+    </main>
+    
+    <div class="toast" id="toast">Item updated</div>
+</body>
+</html>

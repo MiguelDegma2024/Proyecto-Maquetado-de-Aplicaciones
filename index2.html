@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoPharma - Add Item Page</title>
+    <link href="css/style2.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            height: 60px;
+            background-color: #c7e1fc;;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        .brand {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        .brand .neo { color: #0400ff; }
+        .brand .pharma { color: #FF4500; }
+        
+        .user-icon {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 60px;
+            bottom: 0;
+            width: 70px;
+            background-color: #c7e1fc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+        
+        .sidebar-item {
+            color: white;
+            font-size: 1.5em;
+            margin: 20px 0;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .sidebar-item:hover {
+            transform: scale(1.2);
+        }
+        
+        .content {
+            margin-left: 80px;
+            margin-top: 80px;
+            padding: 20px;
+        }
+        
+        .product-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            align-items: start;
+            justify-items: stretch;
+        }
+        
+        .image-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            color: #555;
+        }
+        
+        .attach-button {
+            margin-top: 10px;
+            padding: 10px;
+            background: #c7e1fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .attach-button:hover {
+            background: #0055aa;
+        }
+        
+        .product-form div {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-input, .form-textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        
+        .form-textarea {
+            height: 100px;
+            resize: none;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 50px;
+            }
+            .content {
+                margin-left: 60px;
+            }
+            .product-form {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+                height: auto;
+                padding: 10px;
+            }
+            .sidebar {
+                width: 100%;
+                height: 50px;
+                top: auto;
+                bottom: 0;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .sidebar-item {
+                font-size: 1.2em;
+                margin: 0;
+            }
+            .content {
+                margin: 70px 10px 60px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="brand">
+            <span class="neo">Neo</span><span class="pharma">Pharma</span>
+        </div>
+        <div class="user-icon">⚙️</div>
+    </div>
+    
+    <div class="sidebar">
+        <div class="sidebar-item">✎</div>
+        <div class="sidebar-item">🔍</div>
+        <div class="sidebar-item">📦</div>
+        <div class="sidebar-item">📄</div>
+        <div class="sidebar-item">➕</div>
+    </div>
+    
+    <div class="content">
+        <div class="product-form">
+            <div class="image-section">
+                <h2>Imagen del Producto</h2>
+                <div class="image-placeholder">Imagen aquí</div>
+                <button class="attach-button">Adjuntar</button>
+            </div>
+            
+            <div>
+                <label>ID del Producto</label>
+                <input type="text" class="form-input">
+            </div>
+            
+            <div>
+                <label>Nombre del Producto</label>
+                <input type="text" class="form-input">
+            </div>
+            
+            <div>
+                <label>Precio</label>
+                <input type="text" class="form-input">
+            </div>
+            
+            <div>
+                <label>Subtítulo</label>
+                <input type="text" class="form-input">
+            </div>
+            
+            <div>
+                <label>Descripción</label>
+                <textarea class="form-textarea"></textarea>
+            </div>
+            
+            <div>
+                <label>Stock</label>
+                <input type="text" class="form-input">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
