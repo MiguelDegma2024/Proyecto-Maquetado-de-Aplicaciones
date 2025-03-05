@@ -3,235 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeoPharma - Add Item Page</title>
+    <title>NeoPharma - Agregar Producto</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="css/style2.css" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f5f5;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .header {
-            position: fixed;
-            left: 0;
-            top: 0;
-            right: 0;
-            height: 60px;
-            background-color: #c7e1fc;;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
-            color: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            z-index: 1000;
-        }
-        
-        .brand {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        
-        .brand .neo { color: #0400ff; }
-        .brand .pharma { color: #FF4500; }
-        
-        .user-icon {
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-        
-        .sidebar {
-            position: fixed;
-            left: 0;
-            top: 60px;
-            bottom: 0;
-            width: 70px;
-            background-color: #c7e1fc;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-        }
-        
-        .sidebar-item {
-            color: white;
-            font-size: 1.5em;
-            margin: 20px 0;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        
-        .sidebar-item:hover {
-            transform: scale(1.2);
-        }
-        
-        .content {
-            margin-left: 80px;
-            margin-top: 80px;
-            padding: 20px;
-        }
-        
-        .product-form {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            grid-gap: 20px;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            align-items: start;
-            justify-items: stretch;
-        }
-        
-        .image-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .image-placeholder {
-            width: 100%;
-            height: 300px;
-            background-color: #e0e0e0;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2em;
-            color: #555;
-        }
-        
-        .attach-button {
-            margin-top: 10px;
-            padding: 10px;
-            background: #c7e1fc;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .attach-button:hover {
-            background: #0055aa;
-        }
-        
-        .product-form div {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .form-input, .form-textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-top: 5px;
-        }
-        
-        .form-textarea {
-            height: 100px;
-            resize: none;
-        }
-        
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 50px;
-            }
-            .content {
-                margin-left: 60px;
-            }
-            .product-form {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .header {
-                flex-direction: column;
-                height: auto;
-                padding: 10px;
-            }
-            .sidebar {
-                width: 100%;
-                height: 50px;
-                top: auto;
-                bottom: 0;
-                flex-direction: row;
-                justify-content: space-around;
-            }
-            .sidebar-item {
-                font-size: 1.2em;
-                margin: 0;
-            }
-            .content {
-                margin: 70px 10px 60px 10px;
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="header">
-        <div class="brand">
-            <span class="neo">Neo</span><span class="pharma">Pharma</span>
-        </div>
-        <div class="user-icon">⚙️</div>
-    </div>
-    
-    <div class="sidebar">
-        <div class="sidebar-item">✎</div>
-        <div class="sidebar-item">🔍</div>
-        <div class="sidebar-item">📦</div>
-        <div class="sidebar-item">📄</div>
-        <div class="sidebar-item">➕</div>
-    </div>
-    
-    <div class="content">
-        <div class="product-form">
-            <div class="image-section">
-                <h2>Imagen del Producto</h2>
-                <div class="image-placeholder">Imagen aquí</div>
-                <button class="attach-button">Adjuntar</button>
+    <div class="app-container">
+        <header class="header">
+            <div class="brand">
+                <span class="neo">Neo</span><span class="pharma">Pharma</span>
             </div>
-            
-            <div>
-                <label>ID del Producto</label>
-                <input type="text" class="form-input">
+
+            <nav class="main-nav">
+                <a href="#" class="active">Home</a>
+                <a href="#">Product</a>
+                <a href="#">Inventary</a>
+                <a href="#">Reports</a>
+                <a href="#">Configuration</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn" title="Buscar">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="btn" title="Notificaciones">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button class="btn" title="Configuraciones">
+                    <i class="fas fa-cog"></i>
+                </button>
             </div>
-            
-            <div>
-                <label>Nombre del Producto</label>
-                <input type="text" class="form-input">
+        </header>
+
+        
+        <aside class="sidebar">
+            <div class="sidebar-item active" title="Editar">
+                <i class="fas fa-edit"></i>
             </div>
-            
-            <div>
-                <label>Precio</label>
-                <input type="text" class="form-input">
+            <div class="sidebar-item" title="Buscar">
+                <i class="fas fa-search"></i>
             </div>
-            
-            <div>
-                <label>Subtítulo</label>
-                <input type="text" class="form-input">
+            <div class="sidebar-item" title="Inventario">
+                <i class="fas fa-box"></i>
             </div>
-            
-            <div>
-                <label>Descripción</label>
-                <textarea class="form-textarea"></textarea>
+            <div class="sidebar-item" title="Reportes">
+                <i class="fas fa-file-alt"></i>
             </div>
-            
-            <div>
-                <label>Stock</label>
-                <input type="text" class="form-input">
+            <div class="sidebar-item" title="Agregar">
+                <i class="fas fa-plus"></i>
             </div>
-        </div>
+        </aside>
+
+        
+        <main class="content">
+            <div class="product-form">
+                <div class="image-section">
+                    <h2>Product's image</h2>
+                    <div class="image-placeholder">
+                        <span>Image here</span>
+                    </div>
+                    <button class="attach-button">
+                        <i class="fas fa-upload"></i> Attach
+                    </button>
+                </div>
+                
+                <div class="form-row">
+                    <label>Product's ID</label>
+                    <input type="text" placeholder="Enter ID">
+                </div>
+                
+                <div class="form-row">
+                    <label>Product´s Name</label>
+                    <input type="text" placeholder="Enter the name of the product">
+                </div>
+                
+                <div class="form-row">
+                    <label>Subtitle</label>
+                    <input type="text" placeholder="Descriptive Subtitle">
+                </div>
+                
+                <div class="form-row">
+                    <label>Price</label>
+                    <input type="number" placeholder="Enter the price of the product">
+                </div>
+                
+                <div class="form-row">
+                    <label>Description</label>
+                    <textarea placeholder="Detailed description of the product"></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <label>Stock</label>
+                    <input type="number" placeholder="Cantidad en inventario">
+                </div>
+            </div>
+        </main>
     </div>
 </body>
 </html>
