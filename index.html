@@ -3,151 +3,360 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/style.css" rel="stylesheet">
     <title>NeoPharma</title>
-</head>
-<body>
-    <header class="header">
-        <div class="location-container">
-            <div class="location-icon">📍</div>
-            <div class="location-text">
-                <span>Deliever to Hermosillo 83104</span>
-                <strong>Update Location</strong>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <body>
+        <header class="header">
+            <div class="location-container">
+                <div class="location-icon">📍</div>
+                <div class="location-text">
+                    <span>Deliver to Hermosillo 83104</span>
+                    <strong>Update Location</strong>
+                </div>
             </div>
-        </div>
+            
+            <div class="brand">
+                <span class="neo">Neo</span><span class="pharma">Pharma</span>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="What are you looking for?">
+                <span class="search-icon">✕</span>
+            </div>
+            
+            <nav class="nav-bar">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">Categories</a></li>
+                    <li><a href="#" class="nav-link">Page</a></li>
+                    <li><button class="login-btn">Log In</button></li>
+                    <li><div class="cart-icon">🛒</div></li>
+                </ul>
+            </nav>
+        </header>
         
-        <div class="brand">
-            <span class="neo">Neo</span><span class="pharma">Pharma</span>
-        </div>
-        
-        <div class="search-container">
-            <input type="text" class="search-input" placeholder="What are you looking for?">
-            <span class="search-icon">✕</span>
-        </div>
-        
-        <nav class="nav-bar">
-            <ul class="nav-links">
-                <li><a href="#" class="nav-link">Categories</a></li>
-                <li><a href="#" class="nav-link">Page</a></li>
-                <li><button class="login-btn">Log In</button></li>
-                <li><div class="cart-icon">🛒</div></li>
-            </ul>
-        </nav>
-    </header>
+        <main class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-card" data-price="10.99">
+                        <div class="product-info">
+                            <img src="Fotos/Figma_SunVita.jpg" alt="SunVita" class="product-image">
+                            <div class="product-details">
+                                <div class="product-name">SunVita</div>
+                                <div class="product-description">Nourish Your Skin, Shield the Sun</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-controls">
+                            <div class="product-price">$10.99</div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn minus">-</button>
+                                <span class="quantity-display">1</span>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <select class="dropdown-select form-select">
+                                <option selected disabled>Size</option>
+                                <option>Small</option>
+                                <option>Medium</option>
+                                <option>Large</option>
+                            </select>
+                            <button class="delete-btn">🗑️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-card" data-price="7.99">
+                        <div class="product-info">
+                            <img src="Fotos/Figma_RenewBoost.jpg" alt="RenewBoost" class="product-image">
+                            <div class="product-details">
+                                <div class="product-name">RenewBoost</div>
+                                <div class="product-description">Youthful Glow, Renewed Skin</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-controls">
+                            <div class="product-price">$7.99</div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn minus">-</button>
+                                <span class="quantity-display">1</span>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <select class="dropdown-select form-select">
+                                <option selected disabled>Size</option>
+                                <option>Small</option>
+                                <option>Medium</option>
+                                <option>Large</option>
+                            </select>
+                            <button class="delete-btn">🗑️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-card" data-price="11.99">
+                        <div class="product-info">
+                            <img src="Fotos/Figma_PureGlow.jpg" alt="PureGlow" class="product-image">
+                            <div class="product-details">
+                                <div class="product-name">PureGlow</div>
+                                <div class="product-description">Natural Radiance</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-controls">
+                            <div class="product-price">$11.99</div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn minus">-</button>
+                                <span class="quantity-display">2</span>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <select class="dropdown-select form-select">
+                                <option selected disabled>Size</option>
+                                <option>Small</option>
+                                <option>Medium</option>
+                                <option>Large</option>
+                            </select>
+                            <button class="delete-btn">🗑️</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
     
-    <main>
-        <div class="product-card" data-price="10.99">
-            <div class="product-info">
-                <img src="Fotos/Figma_SunVita.jpg" alt="SunVita" class="product-image">
-                <div class="product-details">
-                    <div class="product-name">SunVita</div>
-                    <div class="product-description">Nourish Your Skin, Shield the Sun</div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-card" data-price="7.99">
+                        <div class="product-info">
+                            <img src="Fotos/Figma_RenewBoost.jpg" alt="RenewBoost" class="product-image">
+                            <div class="product-details">
+                                <div class="product-name">RenewBoost</div>
+                                <div class="product-description">Youthful Glow, Renewed Skin</div>
+                            </div>
+                        </div>
+                        
+                        <div class="product-controls">
+                            <div class="product-price">$7.99</div>
+                            <div class="quantity-control">
+                                <button class="quantity-btn minus">-</button>
+                                <span class="quantity-display">1</span>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <select class="dropdown-select form-select">
+                                <option selected disabled>Size</option>
+                                <option>Small</option>
+                                <option>Medium</option>
+                                <option>Large</option>
+                            </select>
+                            <button class="delete-btn">🗑️</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="product-controls">
-                <div class="product-price">$10.99</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn minus">-</button>
-                    <span class="quantity-display">1</span>
-                    <button class="quantity-btn plus">+</button>
-                </div>
-                <select class="dropdown-select">
-                    <option selected disabled>Size</option>
-                    <option>Small</option>
-                    <option>Medium</option>
-                    <option>Large</option>
-                </select>
-                <button class="delete-btn">🗑️</button>
-            </div>
-        </div>
-        
-        <div class="product-card" data-price="7.99">
-            <div class="product-info">
-                <img src="Fotos/Figma_RenewBoost.jpg" alt="RenewBoost" class="product-image">
-                <div class="product-details">
-                    <div class="product-name">RenewBoost</div>
-                    <div class="product-description">Youthful Glow, Renewed Skin</div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="total-section">
+                        <div class="total-title">Total:</div>
+                        <div class="total-amount">$42.96</div>
+                    </div>
                 </div>
             </div>
             
-            <div class="product-controls">
-                <div class="product-price">$7.99</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn minus">-</button>
-                    <span class="quantity-display">1</span>
-                    <button class="quantity-btn plus">+</button>
+            <div class="row">
+                <div class="col-12 d-flex justify-content-end">
+                    <button class="checkout-btn">Proceed to Checkout</button>
                 </div>
-                <select class="dropdown-select">
-                    <option selected disabled>Size</option>
-                    <option>Small</option>
-                    <option>Medium</option>
-                    <option>Large</option>
-                </select>
-                <button class="delete-btn">🗑️</button>
             </div>
-        </div>
+        </main>
         
-        <div class="product-card" data-price="11.99">
-            <div class="product-info">
-                <img src="Fotos/Figma_PureGlow.jpg" alt="PureGlow" class="product-image">
-                <div class="product-details">
-                    <div class="product-name">PureGlow</div>
-                    <div class="product-description">Natural Radiance</div>
-                </div>
-            </div>
-            
-            <div class="product-controls">
-                <div class="product-price">$11.99</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn minus">-</button>
-                    <span class="quantity-display">2</span>
-                    <button class="quantity-btn plus">+</button>
-                </div>
-                <select class="dropdown-select">
-                    <option selected disabled>Size</option>
-                    <option>Small</option>
-                    <option>Medium</option>
-                    <option>Large</option>
-                </select>
-                <button class="delete-btn">🗑️</button>
-            </div>
-        </div>
-
-        <div class="product-card" data-price="7.99">
-            <div class="product-info">
-                <img src="Fotos/Figma_RenewBoost.jpg" alt="RenewBoost" class="product-image">
-                <div class="product-details">
-                    <div class="product-name">RenewBoost</div>
-                    <div class="product-description">Youthful Glow, Renewed Skin</div>
-                </div>
-            </div>
-            
-            <div class="product-controls">
-                <div class="product-price">$7.99</div>
-                <div class="quantity-control">
-                    <button class="quantity-btn minus">-</button>
-                    <span class="quantity-display">1</span>
-                    <button class="quantity-btn plus">+</button>
-                </div>
-                <select class="dropdown-select">
-                    <option selected disabled>Size</option>
-                    <option>Small</option>
-                    <option>Medium</option>
-                    <option>Large</option>
-                </select>
-                <button class="delete-btn">🗑️</button>
-            </div>
-        </div>
-        
-        <div class="total-section">
-            <div class="total-title">Total:</div>
-            <div class="total-amount">$42.96</div>
-        </div>
-        
-        <button class="checkout-btn">Proceed to Checkout</button>
-    </main>
+        <div class="toast" id="toast">Item updated</div>
     
-    <div class="toast" id="toast">Item updated</div>
-</body>
-</html>
+        <!-- Bootstrap JS Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <script>
+            // JavaScript to handle cart functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                // Select all quantity buttons
+                const minusButtons = document.querySelectorAll('.quantity-btn.minus');
+                const plusButtons = document.querySelectorAll('.quantity-btn.plus');
+                const deleteButtons = document.querySelectorAll('.delete-btn');
+                const toast = document.getElementById('toast');
+                
+                // Function to update total
+                function updateTotal() {
+                    let total = 0;
+                    const productCards = document.querySelectorAll('.product-card');
+                    
+                    productCards.forEach(card => {
+                        const price = parseFloat(card.dataset.price);
+                        const quantity = parseInt(card.querySelector('.quantity-display').textContent);
+                        total += price * quantity;
+                    });
+                    
+                    document.querySelector('.total-amount').textContent = '$' + total.toFixed(2);
+                }
+                
+                // Function to show toast
+                function showToast(message) {
+                    toast.textContent = message;
+                    toast.classList.add('show');
+                    
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                    }, 3000);
+                }
+                
+                // Handle minus button clicks
+                minusButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const display = this.parentElement.querySelector('.quantity-display');
+                        let quantity = parseInt(display.textContent);
+                        
+                        if (quantity > 1) {
+                            quantity--;
+                            display.textContent = quantity;
+                            this.closest('.product-card').classList.add('updated');
+                            updateTotal();
+                            showToast('Quantity updated');
+                            
+                            setTimeout(() => {
+                                this.closest('.product-card').classList.remove('updated');
+                            }, 1000);
+                        }
+                    });
+                });
+                
+                // Handle plus button clicks
+                plusButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const display = this.parentElement.querySelector('.quantity-display');
+                        let quantity = parseInt(display.textContent);
+                        
+                        quantity++;
+                        display.textContent = quantity;
+                        this.closest('.product-card').classList.add('updated');
+                        updateTotal();
+                        showToast('Quantity updated');
+                        
+                        setTimeout(() => {
+                            this.closest('.product-card').classList.remove('updated');
+                        }, 1000);
+                    });
+                });
+                
+                // Handle delete button clicks
+                deleteButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const card = this.closest('.product-card');
+                        card.classList.add('removed');
+                        showToast('Item removed');
+                        
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                            updateTotal();
+                        }, 500);
+                    });
+                });
+            });
+            document.addEventListener('DOMContentLoaded', function() {
+        // Check if screen width is 480px or less
+        if (window.innerWidth <= 480) {
+            // Create mobile menu toggle
+            const header = document.querySelector('.header');
+            const navBar = document.querySelector('.nav-bar');
+            
+            // Create mobile menu icon
+            const menuIcon = document.createElement('div');
+            menuIcon.className = 'mobile-menu-icon';
+            menuIcon.innerHTML = '☰';
+            header.insertBefore(menuIcon, navBar);
+            
+            // Create mobile menu
+            const mobileMenu = document.createElement('div');
+            mobileMenu.className = 'mobile-menu';
+            
+            // Create mobile menu header
+            const mobileMenuHeader = document.createElement('div');
+            mobileMenuHeader.className = 'mobile-menu-header';
+            
+            const mobileMenuTitle = document.createElement('div');
+            mobileMenuTitle.className = 'mobile-menu-title';
+            mobileMenuTitle.textContent = 'Menu';
+            
+            const mobileMenuClose = document.createElement('div');
+            mobileMenuClose.className = 'mobile-menu-close';
+            mobileMenuClose.innerHTML = '✕';
+            
+            mobileMenuHeader.appendChild(mobileMenuTitle);
+            mobileMenuHeader.appendChild(mobileMenuClose);
+            
+            mobileMenu.appendChild(mobileMenuHeader);
+            
+            // Create mobile menu items
+            const menuItems = [
+                { text: 'Home', link: '#' },
+                { text: 'Categories', link: '#' },
+                { text: 'My Account', link: '#' },
+                { text: 'Update Location', link: '#' },
+                { text: 'Help', link: '#' }
+            ];
+            
+            menuItems.forEach(item => {
+                const menuItem = document.createElement('div');
+                menuItem.className = 'mobile-menu-item';
+                
+                const menuLink = document.createElement('a');
+                menuLink.href = item.link;
+                menuLink.textContent = item.text;
+                
+                menuItem.appendChild(menuLink);
+                mobileMenu.appendChild(menuItem);
+            });
+            
+            document.body.appendChild(mobileMenu);
+            
+            // Toggle mobile menu
+            menuIcon.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+            });
+            
+            mobileMenuClose.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+            
+            // Add quick actions floating button
+            const quickActions = document.createElement('div');
+            quickActions.className = 'mobile-actions';
+            quickActions.innerHTML = '+';
+            document.body.appendChild(quickActions);
+            
+            // Add fixed checkout section for very small screens
+            if (window.innerWidth <= 380) {
+                const totalSection = document.querySelector('.total-section');
+                const checkoutBtn = document.querySelector('.checkout-btn');
+                
+                const checkoutSection = document.createElement('div');
+                checkoutSection.className = 'checkout-section';
+                
+                // Move elements to the fixed section
+                checkoutSection.appendChild(totalSection);
+                checkoutSection.appendChild(checkoutBtn);
+                
+                document.body.appendChild(checkoutSection);
+            }
+        }
+        
+        // Handle window resize events
+        window.addEventListener('resize', function() {
+            // You can add code here to handle dynamic resizing
+            // For example, removing/adding mobile elements based on current width
+        });
+    });
+        </script>
+    </body>
+    </html>
