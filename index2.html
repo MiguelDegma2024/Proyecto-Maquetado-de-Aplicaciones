@@ -4,38 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NeoPharma - Agregar Producto</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="css/style2.css" rel="stylesheet">
 </head>
 <body>
     <div class="app-container">
         <header class="header">
+            <button class="navbar-toggler custom-toggler" type="button" id="sidebarToggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
             <div class="brand">
                 <span class="neo">Neo</span><span class="pharma">Pharma</span>
             </div>
-
-            <nav class="main-nav">
-                <a href="#" class="active">Home</a>
-                <a href="index.html">Product</a>
-                <a href="#">Inventary</a>
-                <a href="#">Reports</a>
-                <a href="#">Configuration</a>
+            
+            <nav class="navbar navbar-expand-lg navbar-light w-100">
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="mainNav">
+                    <div class="main-nav">
+                        <a href="#" class="nav-item active">Home</a>
+                        <a href="index.html" class="nav-item">Product</a>
+                        <a href="#" class="nav-item">Inventary</a>
+                        <a href="#" class="nav-item">Reports</a>
+                        <a href="#" class="nav-item">Configuration</a>
+                    </div>
+                </div>
             </nav>
-
+            
             <div class="header-actions">
-                <button class="btn" title="Buscar">
-                    <i class="fas fa-search"></i>
-                </button>
-                <button class="btn" title="Notificaciones">
-                    <i class="fas fa-bell"></i>
-                </button>
-                <button class="btn" title="Configuraciones">
-                    <i class="fas fa-cog"></i>
-                </button>
+                <div class="btn-group">
+                    <button class="btn btn-icon rounded-circle me-2" title="Buscar">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <button class="btn btn-icon rounded-circle me-2" title="Notificaciones">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="btn btn-icon rounded-circle" title="Configuraciones">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
             </div>
         </header>
-
-        
         <aside class="sidebar">
             <div class="sidebar-item active" title="Editar">
                 <i class="fas fa-edit"></i>
@@ -53,51 +66,173 @@
                 <i class="fas fa-plus"></i>
             </div>
         </aside>
-
         
+       
+        <div class="sidebar-mobile" id="mobileSidebar">
+            <a href="#" class="mobile-nav-item active">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="index.html" class="mobile-nav-item">
+                <i class="fas fa-shopping-cart"></i> Product
+            </a>
+            <a href="#" class="mobile-nav-item">
+                <i class="fas fa-box"></i> Inventary
+            </a>
+            <a href="#" class="mobile-nav-item">
+                <i class="fas fa-file-alt"></i> Reports
+            </a>
+            <a href="#" class="mobile-nav-item">
+                <i class="fas fa-cog"></i> Configuration
+            </a>
+            <hr style="border-color: rgba(255,255,255,0.2); margin: 15px 0;">
+            <a href="#" class="mobile-nav-item">
+                <i class="fas fa-edit"></i> Edit
+            </a>
+            <a href="#" class="mobile-nav-item">
+                <i class="fas fa-search"></i> Search
+            </a>
+            <a href="#" class="mobile-nav-item">
+                <i class="fas fa-plus"></i> Add
+            </a>
+        </div>
         <main class="content">
             <div class="product-form">
-                <div class="image-section">
-                    <h2>Product's image</h2>
-                    <div class="image-placeholder">
-                        <span>Image here</span>
+                <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="col-lg-3 mb-4">
+                            <div class="image-section">
+                                <h2>Product's image</h2>
+                                <div class="image-placeholder">
+                                    <span>Image here</span>
+                                </div>
+                                <button class="attach-button">
+                                    <i class="fas fa-upload"></i> Attach
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-9">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Product's ID</label>
+                                        <input type="text" class="form-control" placeholder="Enter ID">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Product's Name</label>
+                                        <input type="text" class="form-control" placeholder="Enter the name of the product">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Subtitle</label>
+                                        <input type="text" class="form-control" placeholder="Descriptive Subtitle">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Price</label>
+                                        <input type="number" class="form-control" placeholder="Enter the price of the product">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Stock</label>
+                                        <input type="number" class="form-control" placeholder="Cantidad en inventario">
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12 mb-3">
+                                    <div class="form-group">
+                                        <label class="form-label">Description</label>
+                                        <textarea class="form-control" rows="4" placeholder="Detailed description of the product"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <button class="attach-button">
-                        <i class="fas fa-upload"></i> Attach
-                    </button>
-                </div>
-                
-                <div class="form-row">
-                    <label>Product's ID</label>
-                    <input type="text" placeholder="Enter ID">
-                </div>
-                
-                <div class="form-row">
-                    <label>Product´s Name</label>
-                    <input type="text" placeholder="Enter the name of the product">
-                </div>
-                
-                <div class="form-row">
-                    <label>Subtitle</label>
-                    <input type="text" placeholder="Descriptive Subtitle">
-                </div>
-                
-                <div class="form-row">
-                    <label>Price</label>
-                    <input type="number" placeholder="Enter the price of the product">
-                </div>
-                
-                <div class="form-row">
-                    <label>Description</label>
-                    <textarea placeholder="Detailed description of the product"></textarea>
-                </div>
-                
-                <div class="form-row">
-                    <label>Stock</label>
-                    <input type="number" placeholder="Cantidad en inventario">
                 </div>
             </div>
         </main>
     </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const mobileSidebar = document.getElementById('mobileSidebar');
+            const mainNavToggler = document.querySelector('.navbar-toggler');
+            const mainNavCollapse = document.querySelector('.navbar-collapse');
+            
+            
+            sidebarToggle.addEventListener('click', function() {
+                mobileSidebar.classList.toggle('show');
+                sidebarToggle.classList.toggle('active');
+                
+                
+                if (mainNavCollapse.classList.contains('show')) {
+                    mainNavCollapse.classList.remove('show');
+                }
+            });
+            
+            
+            const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+            mobileNavItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    mobileSidebar.classList.remove('show');
+                    sidebarToggle.classList.remove('active');
+                });
+            });
+            
+            
+            document.addEventListener('click', function(event) {
+                if (!mobileSidebar.contains(event.target) && 
+                    !sidebarToggle.contains(event.target) && 
+                    mobileSidebar.classList.contains('show')) {
+                    mobileSidebar.classList.remove('show');
+                    sidebarToggle.classList.remove('active');
+                }
+            });
+
+            
+            const navbarCollapseToggler = document.querySelector('.navbar-toggler:not(.custom-toggler)');
+            if (navbarCollapseToggler) {
+                navbarCollapseToggler.addEventListener('click', function() {
+                const mainNavCollapse = document.getElementById('mainNav');
+                if (mainNavCollapse) {
+                    mainNavCollapse.classList.toggle('show');
+                }
+            });
+    }
+          
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const navLinks = document.querySelectorAll('.main-nav .nav-item');
+            
+            if (navbarToggler) {
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (mainNavCollapse.classList.contains('show')) {
+                            new bootstrap.Collapse(mainNavCollapse).hide();
+                        }
+                    });
+                });
+            }
+            
+            
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992) {
+                    mobileSidebar.classList.remove('show');
+                    sidebarToggle.classList.remove('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
