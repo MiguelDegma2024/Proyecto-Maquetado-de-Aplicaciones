@@ -28,7 +28,7 @@
                     <div class="main-nav">
                         <a href="#" class="nav-item active">Home</a>
                         <a href="index.html" class="nav-item">Product</a>
-                        <a href="#" class="nav-item">Inventary</a>
+                        <a href="index3.html" class="nav-item">Inventary</a>
                         <a href="#" class="nav-item">Reports</a>
                         <a href="#" class="nav-item">Configuration</a>
                     </div>
@@ -164,6 +164,156 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Esperamos a que el DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', function() {
+    // Referencia al formulario de producto
+    const productForm = document.querySelector('.product-form');
+    
+    // Agregar un botón de envío al formulario
+    const submitButton = document.createElement('button');
+    submitButton.type = 'button';
+    submitButton.className = 'btn btn-primary mt-3';
+    submitButton.textContent = 'Save Product';
+    productForm.appendChild(submitButton);
+    
+    // Evento click para el botón de envío
+    submitButton.addEventListener('click', function() {
+        // Recopilar datos del formulario
+        const productData = {
+            id: document.querySelector('input[placeholder="Enter ID"]').value,
+            name: document.querySelector('input[placeholder="Enter the name of the product"]').value,
+            subtitle: document.querySelector('input[placeholder="Descriptive Subtitle"]').value,
+            price: document.querySelector('input[placeholder="Enter the price of the product"]').value,
+            stock: document.querySelector('input[placeholder="Cantidad en inventario"]').value,
+            description: document.querySelector('textarea[placeholder="Detailed description of the product"]').value,
+            // Para la imagen, podríamos implementar una solución más compleja para manejar archivos
+            // Por ahora, solo indicamos que no hay imagen seleccionada
+            image: "no-image.jpg"
+        };
+        
+        // Validar que los campos obligatorios estén completos
+        if (!productData.id || !productData.name || !productData.price) {
+            showErrorMessage('Por favor complete los campos obligatorios: ID, Nombre y Precio');
+            return;
+        }
+        
+        // Enviar datos mediante fetch
+        sendProductData(productData);
+    });
+    
+    // Función para enviar datos a la API
+    function sendProductData(productData) {
+        // URL de la API (reemplazar con la URL real de la API)
+        const apiUrl = 'https://67ddb70e471aaaa742825481.mockapi.io/AddProduct';
+        
+        // Configuración de la petición fetch
+        fetch(apiUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                // Si se requiere autenticación, agregar token aquí
+                // 'Authorization': 'Bearer your_token'
+            },
+            body: JSON.stringify(productData)
+        })
+        .then(response => {
+            // Verificar si la respuesta es exitosa
+            if (!response.ok) {
+                throw new Error('Error en la respuesta del servidor: ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Manejo de respuesta exitosa
+            showSuccessMessage('Producto guardado exitosamente');
+            
+            // Redirigir a la página de listado después de un breve retraso
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1500);
+        })
+        .catch(error => {
+            // Manejo de errores
+            console.error('Error al enviar datos:', error);
+            showErrorMessage('Error al guardar el producto: ' + error.message);
+        });
+    }
+    
+    // Función para mostrar mensaje de éxito
+    function showSuccessMessage(message) {
+        // Crear elemento de alerta
+        const alertElement = createAlertElement(message, 'success');
+        
+        // Mostrar alerta en la parte superior del contenido
+        const contentElement = document.querySelector('.content');
+        contentElement.insertBefore(alertElement, contentElement.firstChild);
+        
+        // Eliminar la alerta después de un tiempo
+        setTimeout(() => {
+            alertElement.remove();
+        }, 3000);
+    }
+    
+    // Función para mostrar mensaje de error
+    function showErrorMessage(message) {
+        // Crear elemento de alerta
+        const alertElement = createAlertElement(message, 'danger');
+        
+        // Mostrar alerta en la parte superior del contenido
+        const contentElement = document.querySelector('.content');
+        contentElement.insertBefore(alertElement, contentElement.firstChild);
+        
+        // Eliminar la alerta después de un tiempo
+        setTimeout(() => {
+            alertElement.remove();
+        }, 5000);
+    }
+    
+    // Función auxiliar para crear elementos de alerta
+    function createAlertElement(message, type) {
+        const alertElement = document.createElement('div');
+        alertElement.className = `alert alert-${type} alert-dismissible fade show`;
+        alertElement.role = 'alert';
+        
+        alertElement.innerHTML = `
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        `;
+        
+        return alertElement;
+    }
+    
+    // Configuración para manejar la imagen
+    const attachButton = document.querySelector('.attach-button');
+    const imagePlaceholder = document.querySelector('.image-placeholder');
+    
+    // Crear un input de tipo file oculto
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'image/*';
+    fileInput.style.display = 'none';
+    document.body.appendChild(fileInput);
+    
+    // Vincular el botón attach con el input file
+    attachButton.addEventListener('click', function() {
+        fileInput.click();
+    });
+    
+    // Manejar el cambio de archivo
+    fileInput.addEventListener('change', function(event) {
+        if (event.target.files && event.target.files[0]) {
+            const file = event.target.files[0];
+            
+            // Previsualizar la imagen
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                imagePlaceholder.innerHTML = `<img src="${e.target.result}" alt="Product Image" style="max-width: 100%; max-height: 200px;">`;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
+
         document.addEventListener('DOMContentLoaded', function() {
             
             const sidebarToggle = document.getElementById('sidebarToggle');
