@@ -790,7 +790,7 @@
         function deleteProduct(productId) {
             if (confirm('¿Estás seguro de que quieres eliminar este producto?')) {
                 // URL de la API
-                const apiUrl = `https://67ddb70e471aaaa742825481.mockapi.io/AddProduct/${productId}`;
+                const apiUrl = `https://67ddb70e471aaaa742825481.mockapi.io/product/${productId}`;
                 
                 // Realizar la petición de eliminación
                 fetch(apiUrl, {
