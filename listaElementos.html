@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Elementos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style3.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="location-container">
+            <i class="location-icon">📍</i>
+            <div class="location-text">
+                <strong>Hermosillo, Sonora</strong>
+                <span>83104</span>
+            </div>
+        </div>
+        <div class="brand">
+            <span class="neo">Neo</span><span class="pharma">Pharma</span>
+        </div>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Buscar productos...">
+            <i class="search-icon">🔍</i>
+        </div>
+        <div class="nav-bar">
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link">Inicio</a></li>
+                <li><a href="#" class="nav-link">Productos</a></li>
+                <li><a href="#" class="nav-link">Ofertas</a></li>
+                <li><a href="#" class="nav-link">Contacto</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <div class="container mt-5">
+        <h1 class="mt-5">Listado de Elementos</h1>
+        <table class="table mt-3">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody id="element-list">
+            </tbody>
+        </table>
+
+        <button class="btn btn-primary" id="add-button">Adicionar Nuevo Elemento</button>
+    </div>
+
+    <script>
+        const apiUrl = 'https://67ddb70e471aaaa742825481.mockapi.io/product';
+
+        function loadElements() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const listContainer = document.getElementById('element-list');
+                    listContainer.innerHTML = '';
+                    data.forEach(element => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${element.id}</td>
+                            <td>${element.name}</td>
+                            <td>${element.price}</td>
+                            <td>${element.description}</td>
+                        `;
+                        listContainer.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('Error al cargar los elementos:', error));
+        }
+
+        document.getElementById('add-button').addEventListener('click', () => {
+            window.location.href = 'add-element.html'; 
+        });
+
+        window.onload = loadElements;
+    </script>
+</body>
+</html>
